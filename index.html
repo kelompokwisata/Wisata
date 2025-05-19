@@ -2,193 +2,168 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Sehat Bersama</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Nusantara - Home</title>
   <style>
+    /* Reset & dasar */
     * {
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f1fdf4;
-      color: #333;
+    body, html {
+      height: 100%;
+      background: #f4f7fc;
+      color: #222;
     }
-    header {
-      background: #2e7d32;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    .wrapper {
+      display: flex; height: 100vh; overflow: hidden;
     }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
+    nav.sidebar {
+      width: 220px; background: #1e40af;
+      display: flex; flex-direction: column; padding-top: 1.5rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
     }
-    header p {
-      margin: 4px 0 0;
-      font-size: 14px;
+    nav.sidebar a {
+      color: white; padding: 15px 25px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      border-left: 4px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
     }
-    nav {
-      display: flex;
-      gap: 20px;
+    nav.sidebar a:hover, nav.sidebar a.active {
+      background: #3b82f6;
+      border-left-color: #93c5fd;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 5px;
-      transition: background 0.3s;
+    main.content {
+      flex-grow: 1; background: white; padding: 2rem 3rem;
+      overflow-y: auto; box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
     }
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+    main.content header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.8rem;
     }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+    main.content header h1 {
+      font-weight: 700; color: #1e40af;
     }
-
-    .hero {
-      text-align: center;
-      background: linear-gradient(145deg, #a5d6a7, #e8f5e9);
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #eff6ff;
       border-radius: 12px;
-      padding: 40px 20px;
-      margin-bottom: 40px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(59,130,246,0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
-
-    .hero h2 {
-      color: #2e7d32;
-      font-size: 32px;
-      margin-bottom: 10px;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(59,130,246,0.3);
     }
+  .card img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover; 
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #444;
+    .card-content {
+      padding: 1.3rem 1.6rem;
     }
-
-    .benefits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      margin-bottom: 40px;
+    .card-content h3 {
+      color: #1e40af;
+      margin-bottom: 0.7rem;
+      font-weight: 700;
+      font-size: 1.2rem;
     }
-
-    .benefit-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      width: 260px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
+    .card-content p {
+      color: #374151;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
-
-    .benefit-card h3 {
-      color: #2e7d32;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .benefit-card p {
-      font-size: 15px;
-      color: #555;
-    }
-
-    .cta {
-      background: #c8e6c9;
-      padding: 30px 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .cta h3 {
-      color: #1b5e20;
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .cta p {
-      font-size: 16px;
-      color: #333;
-    }
-
     footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 18px;
-      margin-top: 50px;
-      font-size: 14px;
+      text-align: center; padding: 1rem;
+      font-size: 0.9rem; color: #6b7280;
+      border-top: 1px solid #e5e7eb; margin-top: 2rem;
     }
-
-    @media (max-width: 700px) {
-      header {
+    @media (max-width: 768px) {
+      .wrapper {
         flex-direction: column;
-        align-items: flex-start;
       }
-      nav {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        gap: 12px;
+      nav.sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem 0;
       }
-      .benefits {
-        flex-direction: column;
-        align-items: center;
+      nav.sidebar a {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 12px 10px;
+        font-size: 0.9rem;
+      }
+      nav.sidebar a:hover, nav.sidebar a.active {
+        border-left: none;
+        border-bottom-color: #93c5fd;
+        background: transparent;
+        color: #3b82f6;
+      }
+      main.content {
+        padding: 1.5rem 1.2rem;
+        height: auto;
+        overflow: visible;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div>
-      <h1>Sehat Bersama</h1>
-      <p>Solusi Hidup Sehat dan Bahagia</p>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
+
+  <div class="wrapper">
+    <nav class="sidebar" aria-label="Sidebar Navigation">
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
-      <a href="tips.html">Tips Sehat</a>
+      <a href="destinasi.html">Destinasi</a>
       <a href="kontak.html">Kontak</a>
     </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h2>Selamat Datang di Sehat Bersama!</h2>
-      <p>Temukan berbagai tips, inspirasi, dan panduan hidup sehat yang mudah diterapkan dalam kehidupan sehari-hari.</p>
-    </section>
+    <main class="content">
+      <header>
+        <h1>Explore Nusantara</h1>
+        <p>Wisata Alam & Budaya Indonesia</p>
+      </header>
 
-    <section class="benefits">
-      <div class="benefit-card">
-        <h3>Gaya Hidup Aktif</h3>
-        <p>Olahraga ringan secara rutin membantu menjaga kebugaran dan kesehatan jantung.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Pola Makan Sehat</h3>
-        <p>Konsumsi buah dan sayur segar setiap hari untuk memenuhi kebutuhan nutrisi tubuh.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Kesehatan Mental</h3>
-        <p>Jaga pikiran tetap positif dan luangkan waktu untuk relaksasi dan hobi.</p>
-      </div>
-    </section>
+      <section class="cards" aria-label="Destinasi Unggulan">
+        <article class="card">
+          <img src="https://www.faunadanflora.com/wp-content/uploads/2016/06/visit-indonesia.jpg" alt="Wisata Alam Indonesia" />
+          <div class="card-content">
+            <h3>Keindahan Alam Nusantara</h3>
+            <p>Temukan tempat-tempat menakjubkan tersembunyi di pelosok negeri. Dari pantai eksotis hingga pegunungan megah yang menawan.</p>
+          </div>
+        </article>
 
-    <section class="cta">
-      <h3>Yuk, Mulai Gaya Hidup Sehat Sekarang!</h3>
-      <p>Kesehatan adalah investasi jangka panjang. Mari hidup sehat bersama kami!</p>
-    </section>
-  </main>
+        <article class="card">
+          <img src="https://d1bv4heaa2n05k.cloudfront.net/user-images/1444210926451/friday-shutterstock-279354293small_main_1444210943240.jpeg" alt="Pura Ulun Danu Bratan Bali" />
+          <div class="card-content">
+            <h3>Budaya dan Tradisi</h3>
+            <p>Jelajahi warisan budaya Indonesia melalui berbagai upacara adat, rumah tradisional, dan festival unik yang kaya makna.</p>
+          </div>
+        </article>
 
-  <footer>
-    &copy; 2025 Sehat Bersama. All rights reserved.
-  </footer>
+        <article class="card">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35550fb3-2f90-4173-bc02-3ccf48edc84b/dfc74q3-75343744-b4d0-457e-89ef-4eb5fcd525bf.jpg/v1/fill/w_1080,h_720,q_75,strp/manusela_national_park__maluku__indonesia_by_pepeproductions_dfc74q3-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMzU1NTBmYjMtMmY5MC00MTczLWJjMDItM2NjZjQ4ZWRjODRiXC9kZmM3NHEzLTc1MzQzNzQ0LWI0ZDAtNDU3ZS04OWVmLTRlYjVmY2Q1MjViZi5qcGciLCJ3aWR0aCI6Ijw9MTA4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.YEdunVrRpNU43Wy5qcG2x_m7nrSHruArrnI1yqati14" alt="Upacara adat Toraja" />
+          <div class="card-content">
+            <h3>Petualangan dan Eksplorasi</h3>
+            <p>Dapatkan pengalaman tak terlupakan dengan trekking, diving, dan eksplorasi alam liar yang menantang di berbagai daerah.</p>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        &copy; 2025 Explore Nusantara. All rights reserved.
+      </footer>
+    </main>
+  </div>
+
 </body>
 </html>
