@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Nusantara - Destinasi</title>
+  <style>
+    /* Style sama dengan halaman lain */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body, html {
+      height: 100%;
+      background: #f4f7fc;
+      color: #222;
+    }
+    .wrapper {
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    nav.sidebar {
+      width: 220px; background: #1e40af;
+      display: flex; flex-direction: column; padding-top: 1.5rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    }
+    nav.sidebar a {
+      color: white; padding: 15px 25px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      border-left: 4px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    nav.sidebar a:hover, nav.sidebar a.active {
+      background: #3b82f6;
+      border-left-color: #93c5fd;
+    }
+    main.content {
+      flex-grow: 1; background: white; padding: 2rem 3rem;
+      overflow-y: auto; box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
+    }
+    main.content header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.8rem;
+    }
+    main.content header h1 {
+      font-weight: 700; color: #1e40af;
+    }
+    .grid-destinasi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem;
+    }
+    .destinasi-card {
+      background: #eff6ff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(59,130,246,0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .destinasi-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(59,130,246,0.3);
+    }
+    .destinasi-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 4px solid #3b82f6;
+    }
+    .destinasi-content {
+      padding: 1.3rem 1.6rem;
+    }
+    .destinasi-content h3 {
+      color: #1e40af;
+      margin-bottom: 0.7rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .destinasi-content p {
+      color: #374151;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    footer {
+      text-align: center; padding: 1rem;
+      font-size: 0.9rem; color: #6b7280;
+      border-top: 1px solid #e5e7eb; margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+      nav.sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+      }
+      nav.sidebar a {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 12px 10px;
+        font-size: 0.9rem;
+      }
+      nav.sidebar a:hover, nav.sidebar a.active {
+        border-left: none;
+        border-bottom-color: #93c5fd;
+        background: transparent;
+        color: #3b82f6;
+      }
+      main.content {
+        padding: 1.5rem 1.2rem;
+        height: auto;
+        overflow: visible;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <nav class="sidebar" aria-label="Sidebar Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="destinasi.html" class="active">Destinasi</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <main class="content">
+      <header>
+        <h1>Destinasi Wisata</h1>
+      </header>
+
+      <section class="grid-destinasi" aria-label="Daftar Destinasi Wisata">
+        <article class="destinasi-card">
+          <img src="https://2.bp.blogspot.com/-6pNwqAIbbpQ/V5xlQXERJ2I/AAAAAAAABbI/1ZNY3JI5xk8nECbypasVcQQ-n7-ABf29gCLcB/s1600/pantai%2Bkuta%2Bbali%2B2.jpg" alt="Pantai Kuta Bali" />
+          <div class="destinasi-content">
+            <h3>Pantai Kuta, Bali</h3>
+            <p>Salah satu pantai paling terkenal dengan pasir putih dan ombak yang cocok untuk surfing.</p>
+          </div>
+        </article>
+
+        <article class="destinasi-card">
+          <img src="http://4.bp.blogspot.com/-t5AAV_YAnmI/VV2HszFTjpI/AAAAAAAAAJE/mTxUx1MU84I/s1600/Raja%2BAmpat%2BWisata%2BPaling%2BEksotis%2BDi%2BTanah%2BPapua%2B-%2Bpesona%2Bangin%2Braja%2Bampat%2Bpapua.jpeg" alt="Raja Ampat" />
+          <div class="destinasi-content">
+            <h3>Raja Ampat, Papua Barat</h3>
+            <p>Surga bawah laut dengan keanekaragaman hayati laut yang luar biasa dan air yang jernih.</p>
+          </div>
+        </article>
+
+        <article class="destinasi-card">
+          <img src="http://2.bp.blogspot.com/-kXi0msZ3w0w/U_QRmA-LoxI/AAAAAAAAfes/MX6te1e2pTo/s1600/Sejarah+Candi+Prambanan+Lengkap.jpg" alt="Candi Prambanan" />
+          <div class="destinasi-content">
+            <h3>Candi Prambanan, Yogyakarta</h3>
+            <p>Kompleks candi Hindu terbesar di Indonesia yang penuh dengan nilai sejarah dan arsitektur menakjubkan.</p>
+          </div>
+        </article>
+
+        <article class="destinasi-card">
+          <img src="https://traverse.id/wp-content/uploads/2019/09/Bangunan-Tradisional-Khas-Tana-Toraja-@himsaifanah-1024x680.jpg" alt="Rumah Adat Toraja" />
+          <div class="destinasi-content">
+            <h3>Toraja, Sulawesi Selatan</h3>
+            <p>Kawasan pegunungan dengan budaya unik, rumah adat tongkonan, dan upacara tradisional yang khas.</p>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        &copy; 2025 Explore Nusantara. All rights reserved.
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>

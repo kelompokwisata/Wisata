@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Nusantara - About</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body, html {
+      height: 100%;
+      background: #f4f7fc;
+      color: #222;
+    }
+    .wrapper {
+      display: flex; height: 100vh; overflow: hidden;
+    }
+    nav.sidebar {
+      width: 220px; background: #1e40af;
+      display: flex; flex-direction: column; padding-top: 1.5rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    }
+    nav.sidebar a {
+      color: white; padding: 15px 25px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      border-left: 4px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    nav.sidebar a:hover, nav.sidebar a.active {
+      background: #3b82f6;
+      border-left-color: #93c5fd;
+    }
+    main.content {
+      flex-grow: 1; background: white; padding: 2rem 3rem;
+      overflow-y: auto; box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    main.content header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.8rem;
+      width: 100%;
+      text-align: center;
+    }
+    main.content header h1 {
+      font-weight: 700; color: #1e40af;
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+    main.content header p {
+      color: #4b5563;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    section.about-text {
+      max-width: 800px;
+      line-height: 1.8;
+      color: #444;
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      padding: 0 1rem;
+    }
+    section.about-image {
+      max-width: 800px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    section.about-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(30,64,175,0.15);
+      transition: transform 0.3s ease;
+    }
+    section.about-image img:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      text-align: center; padding: 1rem;
+      font-size: 0.9rem; color: #6b7280;
+      border-top: 1px solid #e5e7eb; margin-top: auto;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+      nav.sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+      }
+      nav.sidebar a {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 12px 10px;
+        font-size: 0.9rem;
+      }
+      nav.sidebar a:hover, nav.sidebar a.active {
+        border-left: none;
+        border-bottom-color: #93c5fd;
+        background: transparent;
+        color: #3b82f6;
+      }
+      main.content {
+        padding: 1.5rem 1.2rem;
+        height: auto;
+        overflow: visible;
+        align-items: stretch;
+      }
+      main.content header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <nav class="sidebar" aria-label="Sidebar Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="destinasi.html">Destinasi</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <main class="content" role="main" aria-label="Konten utama tentang Explore Nusantara">
+      <header>
+        <h1>Tentang Kami</h1>
+        <p>Mengenal Lebih Dekat Explore Nusantara</p>
+      </header>
+
+      <section class="about-text">
+        <p><strong>Explore Nusantara</strong> adalah website yang didedikasikan untuk memperkenalkan keindahan alam, kekayaan budaya, dan destinasi wisata terbaik di seluruh Indonesia.</p>
+
+        <p>Kami berkomitmen menyediakan informasi yang akurat, inspiratif, dan terkini agar wisatawan lokal maupun mancanegara dapat menikmati pengalaman yang tak terlupakan di negeri ini.</p>
+
+        <p>Melalui website ini, Anda dapat menjelajahi berbagai destinasi menarik, memahami sejarah dan tradisi di setiap daerah, serta merencanakan perjalanan wisata dengan mudah dan menyenangkan.</p>
+
+        <h2 style="color:#1e40af; margin-top:2rem;">Misi Kami</h2>
+        <ul style="margin-left: 1.2rem; color:#444; font-size:1rem; line-height:1.6;">
+          <li>Menyajikan konten wisata yang autentik dan terpercaya.</li>
+          <li>Mempromosikan keberagaman budaya dan alam Indonesia.</li>
+          <li>Mendorong pariwisata berkelanjutan dan ramah lingkungan.</li>
+          <li>Menghubungkan wisatawan dengan komunitas lokal.</li>
+        </ul>
+
+        <h2 style="color:#1e40af; margin-top:2rem;">Tim Kami</h2>
+        <p>Tim kami terdiri dari para pecinta wisata dan budaya Indonesia yang bersemangat dalam menyajikan informasi berkualitas demi pengalaman terbaik para pengunjung.</p>
+      </section>
+
+      <section class="about-image" aria-label="Gambar keindahan alam Indonesia">
+        <img src="https://www.faunadanflora.com/wp-content/uploads/2016/06/visit-indonesia.jpg" alt="Pemandangan keindahan alam Indonesia" />
+      </section>
+
+      <footer>
+        &copy; 2025 Explore Nusantara. All rights reserved.
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>
